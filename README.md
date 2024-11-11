@@ -1,6 +1,6 @@
 
 
-# <h1 align="center"> Content Management System (CMD) PHP-MVC </h1>
+# <h1 align="center"> Content Management System (CMD-PHP-MVC) </h1>
 
 ---
 
