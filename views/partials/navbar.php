@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <span class="fw-bold ">MVC Structure</span>
+            <span class="fw-bold ">CMS</span>
         </a>
         <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#nav_lc"
                 aria-controls="nav_lc" aria-expanded="false" aria-label="Toggle navigation">
