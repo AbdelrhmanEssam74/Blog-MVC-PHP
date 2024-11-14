@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <!--Bootstrap-->
     <link rel="stylesheet" href="Lib/bootstrap/css/bootstrap.css">
+<!--    <link rel="stylesheet" href="Lib/bootstrap/css/bootstrap.rtl.css">-->
     <link rel="stylesheet" href="Lib/bootstrapIcon/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <!--FontAwesome-->
     <link rel="stylesheet" href="Lib/fontawesome/css/all.css">
 </head>
-<body class="bg-light">
+<body class="">
 <?php include view_path() . 'partials/navbar.php' ?>
-<?php include view_path() . 'partials/Back_to_top_button.php' ?>
+<?php //include view_path() . 'partials/Back_to_top_button.php' ?>
 <div>
     {{content}}
 </div>
 <script src="assets/js/main.js"></script>
 <script src="Lib/bootstrap/js/bootstrap.js"></script>
 <script src="Lib/fontawesome/js/all.js"></script>
+<script src="Lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="Lib/bootstrap/js/bootstrap.esm.js"></script>
+<script src="Lib/bootstrap/js/color-modes.js"></script>
 </body>
 </html>
