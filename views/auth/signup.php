@@ -5,64 +5,69 @@ if (app()->session->exists('login')) {
 }
 ?>
 <div class="form-container">
-    <h2 class="text-center mb-4">Register</h2>
+    <h2 class="text-center mb-4">Sign Up</h2>
     <form method="post" action="/store">
         <div class="field">
-            <div class="form-group">
-                <label for="full_name">Full Name</label>
-                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter username">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingFullName" name="full_name"
+                       placeholder="Enter username">
+                <label for="floatingFullName">Full Name</label>
             </div>
             <?php if (app()->session->hasFlash('errors')): ?>
                 <p id="emailHelp" class="form-text text-danger">
-                    <?= app()->session->getFlash('errors')['full_name'][0]; ?>
+                    <?= (isset(app()->session->getFlash('errors')['full_name'][0])) ? app()->session->getFlash('errors')['full_name'][0] : "" ?>
                 </p>
             <?php endif; ?>
         </div>
         <div class="field">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+            <div class="form-floating mt-2">
+                <input type="text" class="form-control" id="floatingUsername" name="username"
+                       placeholder="Enter username">
+                <label for="floatingUsername">Username</label>
             </div>
             <?php if (app()->session->hasFlash('errors')): ?>
                 <p id="emailHelp" class="form-text text-danger">
-                    <?= app()->session->getFlash('errors')['username'][0]; ?>
+                    <?= (isset(app()->session->getFlash('errors')['username'][0])) ? app()->session->getFlash('errors')['username'][0] : "" ?>                </p>
+            <?php endif; ?>
+        </div>
+        <div class="field">
+            <div class="form-floating  mt-2">
+                <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com">
+                <label for="floatingEmail">Email address</label>
+            </div>
+            <?php if (app()->session->hasFlash('errors')): ?>
+                <p id="emailHelp" class="form-text text-danger">
+                    <?= (isset(app()->session->getFlash('errors')['email'][0])) ? app()->session->getFlash('errors')['email'][0] : "" ?>
                 </p>
             <?php endif; ?>
         </div>
         <div class="field">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+            <div class="form-floating mt-2">
+                <input type="password" class="form-control" id="floatingPassword" name="password"
+                       placeholder="Password">
+                <label for="floatingPassword">Password</label>
             </div>
             <?php if (app()->session->hasFlash('errors')): ?>
                 <p id="emailHelp" class="form-text text-danger">
-                    <?= app()->session->getFlash('errors')['email'][0]; ?>
+                    <?= (isset(app()->session->getFlash('errors')['password'][0])) ? app()->session->getFlash('errors')['password'][0] : "" ?>
                 </p>
             <?php endif; ?>
         </div>
         <div class="field">
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-            </div>
-            <?php if (app()->session->hasFlash('errors')): ?>
-                <p id="emailHelp" class="form-text text-danger">
-                    <?= app()->session->getFlash('errors')['password'][0]; ?>
-                </p>
-            <?php endif; ?>
-        </div>
-        <div class="field">
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm-password" name="password_confirmation"
+            <div class="form-floating mt-2">
+                <input type="password" class="form-control" id="floatingConfirmPassword" name="password_confirmation"
                        placeholder="Confirm Password">
+                <label for="floatingConfirmPassword">Confirm Password</label>
             </div>
             <?php if (app()->session->hasFlash('errors')): ?>
                 <p id="emailHelp" class="form-text text-danger">
-                    <?= app()->session->getFlash('errors')['password_confirmation'][0]; ?>
+                    <?= (isset(app()->session->getFlash('errors')['password_confirmation'][0])) ? app()->session->getFlash('errors')['password_confirmation'][0] : "" ?>
                 </p>
             <?php endif; ?>
         </div>
-        <button type="submit" class=" w-100 btn btn-primary btn-block">Register</button>
+        <div class="form-group">
+            <button type="submit" class=" mt-3 w-100 btn btn-primary btn-block">Sign Up</button>
+        </div>
+        <p class="mb-3 text-body-secondary text-center"><a href="/login">Do You Have An Account? Sign In</a></p>
     </form>
 </div>

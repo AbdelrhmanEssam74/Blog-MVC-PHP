@@ -13,8 +13,7 @@ if (app()->session->exists('login')) {
     <h2 class="text-center mb-4">Welcome Back</h2>
     <form method="post">
         <div class="field">
-            <div class="form-group">
-                <label for="email">Email</label>
+            <div class="form-floating">
                 <input type="email" class="form-control"
                     <?php if (app()->session->hasFlash('oldEmail')): ?>
                         value="
@@ -22,6 +21,8 @@ if (app()->session->exists('login')) {
                               "
                     <?php endif; ?>
                        id="email" name="email" placeholder="Enter email">
+                <label for="email">Email</label>
+
             </div>
             <?php if (app()->session->hasFlash('email')): ?>
                 <p class="form-text text-danger MassageHelp">
@@ -30,9 +31,10 @@ if (app()->session->exists('login')) {
             <?php endif; ?>
         </div>
         <div class="field">
-            <div class="form-group">
-                <label for="password">Password</label>
+            <div class="form-floating mt-3">
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <label for="password">Password</label>
+
             </div>
             <?php if (app()->session->hasFlash('password')): ?>
                 <p class="form-text text-danger MassageHelp">
@@ -40,6 +42,9 @@ if (app()->session->exists('login')) {
                 </p>
             <?php endif; ?>
         </div>
-        <button type="submit" class="w-100 btn btn-primary btn-block">Login</button>
+            <div class="form-floating mt-2">
+                <button type="submit" class="w-100 btn btn-primary btn-block">Login</button>
+            </div>
+        <p class="mt-2 text-body-secondary text-center"><a href="/signup">Create Now Account</a></p>
     </form>
 </div>

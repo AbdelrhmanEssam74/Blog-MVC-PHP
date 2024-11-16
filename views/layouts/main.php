@@ -16,7 +16,6 @@
 <body class="">
 <?php include view_path() . 'partials/navbar.php' ?>
 <?php include view_path() . 'partials/dark_light_btn.php' ?>
-<?php include view_path() . 'partials/back_to_top_btn.php' ?>
 <div>
     {{content}}
 </div>
