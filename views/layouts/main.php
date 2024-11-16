@@ -15,7 +15,8 @@
 </head>
 <body class="">
 <?php include view_path() . 'partials/navbar.php' ?>
-<?php //include view_path() . 'partials/Back_to_top_button.php' ?>
+<?php include view_path() . 'partials/dark_light_btn.php' ?>
+<?php include view_path() . 'partials/back_to_top_btn.php' ?>
 <div>
     {{content}}
 </div>
@@ -23,7 +24,6 @@
 <script src="Lib/bootstrap/js/bootstrap.js"></script>
 <script src="Lib/fontawesome/js/all.js"></script>
 <script src="Lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="Lib/bootstrap/js/bootstrap.esm.js"></script>
 <script src="Lib/bootstrap/js/color-modes.js"></script>
 </body>
 </html>
