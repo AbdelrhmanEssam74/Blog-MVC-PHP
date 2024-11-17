@@ -1,4 +1,3 @@
-
 <div class="container">
     <header class="border-bottom lh-1 py-3">
         <nav id="main-navbar" class="navbar navbar-expand-md  navbar-before-scroll shadow-0">
@@ -22,12 +21,12 @@
                         <li class="nav-item"><a class="nav-link " href="#">Testimonials</a></li>
                     </ul>
                     <div class="ms-lg-auto">
-                        <?php if(!app()->session->exists('login')):?>
+                        <?php if (!app()->session->exists('login')): ?>
                             <a class="btn btn-outline-primary me-2 " href="login">Login</a>
                             <a class="btn btn-primary" href="signup">Sign Up</a>
-                        <?php else:?>
+                        <?php else: ?>
                             <a class="btn btn-danger" href="logout">Logout</a>
-                        <?php endif;?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -36,18 +35,31 @@
 
     <div class="nav-scroller py-1 mb-3 border-bottom">
         <nav class="nav nav-underline justify-content-between">
-            <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
-            <a class="nav-item nav-link link-body-emphasis" href="Design">Design</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+            <a class="nav-item nav-link link-body-emphasis active"
+               href="categories/world/<?= getCurrentDate('Y') ?>/<?= getCurrentDate('m') ?>">
+                World</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/us/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">U.S.</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/technology/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Technology</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/design/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Design</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/culture/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Culture</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/business/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Business</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/politics/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Politics</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/opinion/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Opinion</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/science/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Science</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/health/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Health</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/style/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Style</a>
+            <a class="nav-item nav-link link-body-emphasis" href="categories/travel/<?= getCurrentDate(
+                'Y') ?>/<?= getCurrentDate('m') ?>">Travel</a>
         </nav>
     </div>
 </div>

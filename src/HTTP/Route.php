@@ -30,14 +30,13 @@ class Route
 
     public function resolve(): void
     {
+
         $path = $this->request->path();
         $method = $this->request->method();
         $params = $this->request->params();
-
         // Check if the method exists in the RoutesMap array
         if (array_key_exists($method, self::$RoutesMap) && array_key_exists($path, self::$RoutesMap[$method])) {
             $action = self::$RoutesMap[$method][$path];
-
             // If the action is a callback
             if (is_callable($action)) {
                 call_user_func_array($action, $params);
