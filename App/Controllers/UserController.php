@@ -2,12 +2,11 @@
 
 namespace App\Controllers;
 
-use http\Env\Request;
 use PROJECT\View\View;
 
-class ProfileController
+class UserController
 {
-    public function index($id = null)
+    public function profile($id = null): null
     {
         return View::makeView('profile');
     }

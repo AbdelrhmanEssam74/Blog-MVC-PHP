@@ -25,6 +25,7 @@ class Request
         $path = $_SERVER['REQUEST_URI'] ?? '/';
         return strtok($path, "?");
     }
+
     /**
      * Extracts parameters from the current request URI based on predefined route patterns.
      *
@@ -47,21 +48,21 @@ class Request
         $params = [];
         $segments = explode('/', $urlPath);
         $routePatterns = [];
-        if (count($segments) > 2) {
+        if (count($segments) > 1) {
             // Define the route patterns you want to match (could be dynamic)
             $routePatterns = [
                 $segments[0] . '/' . $segments[1] . '/{year}/{month}',
-                $segments[0] . '/' . $segments[1] . '/{article-title}',
-                // Add more patterns as needed
+                $segments[0] . '/' . $segments[1] . '/{id}',
             ];
         }
         foreach ($routePatterns as $routePattern) {
             preg_match_all('/\{([^}]+)\}/', $routePattern, $keys); // Extract parameter names
-            $keys = $keys[1]; // ['year', 'month', ...]
+            $keys = $keys[1]; // ['id', etc.]
 
             // Convert route pattern into a regex
             $regex = preg_replace('/\{[^}]+\}/', '([^/]+)', $routePattern);
             $regex = '/^' . str_replace('/', '\/', $regex) . '$/';
+
             // Try to match the URL path to the pattern
             if (preg_match($regex, $urlPath, $matches)) {
                 array_shift($matches); // Remove the full match (the entire URL)
@@ -70,9 +71,9 @@ class Request
             }
         }
 
+
         return $params;
     }
-    
 
 
     public function all(): array
