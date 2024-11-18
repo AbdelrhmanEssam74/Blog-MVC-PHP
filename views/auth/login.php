@@ -31,7 +31,7 @@ if (app()->session->exists('login')) {
             <?php endif; ?>
         </div>
         <div class="field">
-            <div class="form-floating mt-3">
+            <div class="form-floating mt-4">
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 <label for="password">Password</label>
 
@@ -42,7 +42,7 @@ if (app()->session->exists('login')) {
                 </p>
             <?php endif; ?>
         </div>
-            <div class="form-floating mt-2">
+            <div class="form-floating mt-4">
                 <button type="submit" class="w-100 btn btn-primary btn-block">Login</button>
             </div>
         <p class="mt-2 text-body-secondary text-center"><a href="/signup">Create Now Account</a></p>
