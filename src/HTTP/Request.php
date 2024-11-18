@@ -44,20 +44,21 @@ class Request
      */
     public static function params(): array
     {
-        $urlPath = trim(self::path(), '/'); // Current path without query string
+        $urlPath = trim(self::path(), '/'); // Get the current path
         $params = [];
         $segments = explode('/', $urlPath);
+        // Define the route patterns you want to match
         $routePatterns = [];
         if (count($segments) > 1) {
-            // Define the route patterns you want to match (could be dynamic)
             $routePatterns = [
-                $segments[0] . '/' . $segments[1] . '/{year}/{month}',
-                $segments[0] . '/' . $segments[1] . '/{id}',
+                $segments[0] . '/' . $segments[1] . '/{id}', // For patterns like /user/profile/{id}
+                $segments[0] . '/' . $segments[1] . '/{year}/{month}', // Optional pattern example
             ];
         }
+
         foreach ($routePatterns as $routePattern) {
             preg_match_all('/\{([^}]+)\}/', $routePattern, $keys); // Extract parameter names
-            $keys = $keys[1]; // ['id', etc.]
+            $keys = $keys[1]; // ['id', 'year', 'month', etc.]
 
             // Convert route pattern into a regex
             $regex = preg_replace('/\{[^}]+\}/', '([^/]+)', $routePattern);
@@ -70,7 +71,6 @@ class Request
                 break; // Stop once a pattern matches
             }
         }
-
 
         return $params;
     }

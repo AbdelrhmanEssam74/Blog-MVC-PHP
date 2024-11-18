@@ -51,6 +51,8 @@ class LoginController
         app()->session->set('login', true);
         app()->session->set('user_id', $user_data[0]->user_id);
         app()->session->set('email', $user_data[0]->email);
+        app()->session->set('username', $user_data[0]->username);
+        app()->session->set('profile-link', 'user/profile/' . $user_data[0]->user_id);
         Login::login([
             'user_id' => $user_data[0]->user_id,
             'full_name' => $user_data[0]->full_name,
@@ -65,7 +67,7 @@ class LoginController
     {
         session_unset();
         session_destroy();
-        RedirectToView('login');
+        RedirectToView('');
         exit();
     }
 }
