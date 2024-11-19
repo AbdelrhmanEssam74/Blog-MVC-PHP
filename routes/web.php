@@ -14,4 +14,6 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/user/profile', [UserController::class, 'profile']);
+Route::get('/categories/', [CategoriesController::class, 'index']);
 Route::get('/categories/world', [CategoriesController::class, 'world']);
+Route::get('/categories/technology', [CategoriesController::class, 'technology']);

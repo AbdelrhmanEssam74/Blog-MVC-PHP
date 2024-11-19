@@ -64,7 +64,10 @@
 
     <div class="nav-scroller py-1 mb-3 border-bottom">
         <nav class="nav nav-underline justify-content-between">
-            <a class="nav-item nav-link link-body-emphasis active"
+            <a class="nav-item nav-link link-body-emphasis"
+               href="/">
+                Home</a>
+            <a class="nav-item nav-link link-body-emphasis"
                href="/categories/world/<?= getCurrentDate('Y') ?>/<?= getCurrentDate('m') ?>">
                 World</a>
             <a class="nav-item nav-link link-body-emphasis" href="/categories/us/<?= getCurrentDate(
