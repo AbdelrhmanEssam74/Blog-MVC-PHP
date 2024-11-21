@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\BlogController;
 use App\Controllers\CategoriesController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
@@ -17,3 +18,4 @@ Route::get('/user/profile', [UserController::class, 'profile']);
 Route::get('/categories/', [CategoriesController::class, 'index']);
 Route::get('/categories/world', [CategoriesController::class, 'world']);
 Route::get('/categories/technology', [CategoriesController::class, 'technology']);
+Route::get('/blog/articles', [BlogController::class, 'articles']);

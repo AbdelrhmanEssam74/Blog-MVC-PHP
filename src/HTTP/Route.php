@@ -35,7 +35,6 @@ class Route
 
         // Get parameters from the request
         $params = $this->request->params();
-
         // Trim the path to get the base route
         $path_arr = explode('/', $path);
         $trimmed_path = implode('/', array_slice($path_arr, 0, 3));

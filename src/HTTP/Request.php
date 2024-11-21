@@ -51,11 +51,10 @@ class Request
         $routePatterns = [];
         if (count($segments) > 1) {
             $routePatterns = [
-                $segments[0] . '/' . $segments[1] . '/{id}', // For patterns like /user/profile/{id}
+                $segments[0] . '/' . $segments[1] . '/{category}/{postTitle}/{postID}', // For patterns like /controller/method/{id}
                 $segments[0] . '/' . $segments[1] . '/{year}/{month}', // Optional pattern example
             ];
         }
-
         foreach ($routePatterns as $routePattern) {
             preg_match_all('/\{([^}]+)\}/', $routePattern, $keys); // Extract parameter names
             $keys = $keys[1]; // ['id', 'year', 'month', etc.]
@@ -63,7 +62,6 @@ class Request
             // Convert route pattern into a regex
             $regex = preg_replace('/\{[^}]+\}/', '([^/]+)', $routePattern);
             $regex = '/^' . str_replace('/', '\/', $regex) . '$/';
-
             // Try to match the URL path to the pattern
             if (preg_match($regex, $urlPath, $matches)) {
                 array_shift($matches); // Remove the full match (the entire URL)
@@ -71,7 +69,6 @@ class Request
                 break; // Stop once a pattern matches
             }
         }
-
         return $params;
     }
 
