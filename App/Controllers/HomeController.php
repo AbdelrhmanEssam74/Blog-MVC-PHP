@@ -8,6 +8,6 @@ class HomeController
 {
     public function index(): null
     {
-        return View::makeView("index");
+        return View::makeView("main.index");
     }
 }
