@@ -9,9 +9,11 @@ class BlogController
     public function articles($category, $postTile, $postID): void
     {
         $date = [
-            "id" => $postID,
-            "category" => $category,
-            "post" => $postTile
+            "params" => [
+                'postTitle' => 'Kate-Nash-says-OnlyFans-will-earn-more-than-tour',
+                'category' => 'Culture',
+                'post_id' => 'cwygdzn4dw4o'
+            ]
         ];
         View::makeView('blog.articles', [], $date);
     }
