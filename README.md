@@ -1,7 +1,8 @@
 
 
-# <h1 align="center"> Content Management System (CMD-PHP-MVC) </h1>
+# <h1 align="center"> Blog </h1>
 
+## Blog Webiste Using MVC Structure 
 ---
 
 <div align="center">
