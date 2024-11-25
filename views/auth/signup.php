@@ -65,6 +65,23 @@ if (app()->session->exists('login')) {
                 </p>
             <?php endif; ?>
         </div>
+        <div class="field">
+            <div class="mt-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="">
+                        <img id="selectedAvatar" src="assets/images/default-profile-image.png"
+                             class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;" alt="example placeholder" />
+                    </div>
+                    <div class="">
+                        <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
+                            <label class="form-label text-white m-1" for="customFile2">Choose Profile Picture</label>
+                            <input type="file" class="form-control d-none" id="customFile2" onchange="displaySelectedImage(event, 'selectedAvatar')" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="form-group">
             <button type="submit" class=" mt-3 w-100 btn btn-primary btn-block">Sign Up</button>
         </div>
