@@ -2,7 +2,7 @@
 
 # <h1 align="center"> Blog </h1>
 
-## Blog Webiste Using MVC Structure 
+## Blog Webiste  
 ---
 
 <div align="center">
